@@ -23,7 +23,7 @@ class PDFIngestor:
         documents = SimpleDirectoryReader(self.papers_dir).load_data()
         print(f"Loaded {len(documents)} document(s)")
 
-        # Embed and index documents (using OpenAI, set your API key in env OPENAI_API_KEY)
+        # Embed and index documents
         embed_model = OpenAIEmbedding()
         self.index = VectorStoreIndex.from_documents(
             documents,

@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+.DS_Store
+*.pyc
+*.pkl
+*.csv
+.env
+node_modules/
+*.log

@@ -64,7 +64,7 @@ def router_agent_with_history(pdf_ingestor, question, history):
     # Concatenate previous Q&A as context for the retriever/LLM
     if history:
         context = ""
-        for turn in history[-3:]:  # Use last 3 turns (you can adjust)
+        for turn in history[-3:]:  # Used last 3 turns 
             context += f"User: {turn['question']}\nAssistant: {turn['answer']}\n"
         question_for_rag = f"{context}User: {question}"
     else:
