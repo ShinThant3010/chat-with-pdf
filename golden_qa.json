@@ -1,0 +1,38 @@
+[
+  {
+    "question": "How many examples are enough for good performance?",
+    "expected": "clarifier"
+  },
+  {
+    "question": "What’s the best prompt?",
+    "expected": "clarifier"
+  },
+  {
+    "question": "Tell me about the results.",
+    "expected": "clarifier"
+  },
+  {
+    "question": "Which prompt template gave the highest zero-shot accuracy on Spider in Zhang et al. (2024)?",
+    "expected": "pdf"
+  },
+  {
+    "question": "Which models were evaluated in the SimpleDDL-MD-Chat experiments, and what were the outcomes?",
+    "expected": "pdf"
+  },
+  {
+    "question": "How well does Codex perform on the Spider benchmark in zero-shot settings, and what factors impact its performance?",
+    "expected": "pdf"
+  },
+  {
+    "question": "Where is the headquarters of Anthropic?",
+    "expected": "web"
+  },
+  {
+    "question": "What is the latest version of GPT available to the public?",
+    "expected": "web"
+  },
+  {
+    "question": "What did OpenAI release this month?",
+    "expected": "web"
+  }
+]
