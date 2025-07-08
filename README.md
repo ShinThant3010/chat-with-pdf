@@ -35,7 +35,7 @@ TAVILY_API_KEY=tvly-xxx
 
 ### 3. Place Your PDFs
 
-Put your PDF files in the `sample_papers/` directory.
+Put your PDF files in the `papers/` directory.
 
 ### 4. Run the App
 
@@ -51,13 +51,6 @@ Put your PDF files in the `sample_papers/` directory.
 ### 5. Test the API
 
 - Open http://localhost:8000/docs for the Swagger UI.
-- Or use `curl`:
-
-    curl -X POST "http://localhost:8000/ask" \
-      -H "Content-Type: application/json" \
-      -d '{"session_id": "myuser", "question": "Summarize the experimental setup described in Lee et al. (2023)."}'
-
----
 
 ## API Endpoints
 
