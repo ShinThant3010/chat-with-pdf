@@ -28,9 +28,11 @@ def ask_question(req: QuestionRequest):
     session_id = req.session_id
     # Load previous chat history
     history = session_store.get(session_id, [])
+    
     # Optionally, add previous Q&A as extra context (see below)
-    # answer, agent = router_agent_with_history(pdf_ingestor, req.question, history)
-    answer, agent = router_agent(pdf_ingestor, req.question)
+    # answer, agent = router_agent(pdf_ingestor, req.question)
+    answer, agent = router_agent_with_history(pdf_ingestor, req.question, history)
+    
     # Add new turn to session history
     history.append({"question": req.question, "answer": answer, "agent": agent})
     session_store[session_id] = history
