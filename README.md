@@ -100,23 +100,22 @@ Put your PDF files in the `sample_papers/` directory.
 ---
 
 ## Project Structure
-
 chat-with-pdf/
 │
 ├── app/
-│ ├── main.py
-│ ├── agents.py
-│ ├── pdf_ingest.py
-│ └── ... (other modules)
-├── sample_papers/ # Put your PDFs here
+│   ├── main.py
+│   ├── agents.py
+│   ├── pdf_ingest.py
+│   └── ... (other modules)
+├── sample_papers/           # Put your PDFs here
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
 ├── README.md
-├── .env # Your API keys (not committed)
+├── .env                     # Your API keys (not committed)
 ├── .env.example
-├── golden_qa.json # Evaluation gold questions
-├── evaluate.py # Automated evaluation script
+├── golden_qa.json           # Evaluation gold questions
+├── evaluate.py              # Automated evaluation script
 
 
 ---
