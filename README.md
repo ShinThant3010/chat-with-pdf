@@ -27,8 +27,8 @@ It supports session-based memory, ambiguous question clarification, and is fully
 ### 2. Add Your API Keys
 
 Copy `.env.example` to `.env` and fill in your keys:
-    ```OPENAI_API_KEY=sk-xxx
-    TAVILY_API_KEY=tvly-xxx```
+    <code> ```OPENAI_API_KEY=sk-xxx
+    TAVILY_API_KEY=tvly-xxx```</code> 
 
 
 ### 3. Place Your PDFs
