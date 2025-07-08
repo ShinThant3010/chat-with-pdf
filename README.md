@@ -61,13 +61,13 @@ Put your PDF files in the `papers/` directory.
     {
       "answer": "text",
       "agent": "pdf",
-      "session_id": "user1",
+      "session_id": "session_id",
       "history": [{ "question": "...", "answer": "..." }]
     }
     ```
 - **POST `/clear`**
-  - Input: `{ "session_id": "user1" }`
-  - Output: `{ "message": "Session user1 memory cleared." }`
+  - Input: `{ "session_id": "session_id" }`
+  - Output: `{ "message": "Session memory cleared." }`
 
 ---
 
@@ -103,14 +103,14 @@ Put your PDF files in the `papers/` directory.
     │ ├── main.py 
     │ ├── agents.py 
     │ ├── pdf_ingest.py 
-    │ └── ... (other modules) 
-    ├── sample_papers/                 # Put your PDFs here 
+    ├── papers/                 # Put your PDFs here 
     ├── Dockerfile 
     ├── docker-compose.yml 
     ├── requirements.txt 
     ├── README.md 
     ├── .env                           # Your API keys (not committed) 
     ├── .env.example 
+    ├── .gitignore
     ├── golden_qa.json                 # Evaluation gold questions 
     ├── evaluate.py                    # Automated evaluation script 
     ``` </code> </pre>
