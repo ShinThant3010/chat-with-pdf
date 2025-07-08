@@ -136,7 +136,7 @@ Put your PDF files in the `papers/` directory.
 
 - In-memory session storage is **not persistent**; restart clears memory.
 - Ensure you have enough OpenAI/Tavily quota for large experiments.
-- To add more PDFs, just drop them into `sample_papers/` and restart the app.
+- To add more PDFs, just drop them into `papers/` and restart the app.
 
 ---
 
