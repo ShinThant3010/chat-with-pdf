@@ -60,9 +60,9 @@ Put your PDF files in the `papers/` directory.
     ```json
     {
       "answer": "text",
-      "agent": "pdf", // or "web" or "clarifier"
+      "agent": "pdf",
       "session_id": "user1",
-      "history": [ /* ...previous Q&A objects... */ ]
+      "history": [{ "question": "...", "answer": "..." }]
     }
     ```
 - **POST `/clear`**
