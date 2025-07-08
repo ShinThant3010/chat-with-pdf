@@ -8,10 +8,10 @@ It supports session-based memory, ambiguous question clarification, and is fully
 
 ## Features
 
-- **PDF-based RAG QA**: Answers user questions using OpenAI grounded in ingested PDFs.
-- **Web Search Fallback**: If the answer is not in the PDFs, performs real-time web search (Tavily).
-- **Clarifier Agent**: Detects ambiguous questions and prompts the user for clarification.
-- **Session Memory**: Remembers each user’s chat history for follow-up questions in the same session.
+- **PDF-based RAG QA**: Answer user questions using OpenAI grounded in ingested PDFs.
+- **Web Search Fallback**: If the answer is not in the PDFs, perform real-time web search (Tavily).
+- **Clarifier Agent**: Detect ambiguous questions and prompts the user for clarification.
+- **Session Memory**: Remember each user’s chat history for follow-up questions in the same session.
 - **Modular Agents**: Clean separation for clarification, PDF RAG, and web search agents.
 - **Dockerized**: Easy to run anywhere, with or without Docker Compose.
 
@@ -27,8 +27,8 @@ It supports session-based memory, ambiguous question clarification, and is fully
 ### 2. Add Your API Keys
 
 Copy `.env.example` to `.env` and fill in your keys:
-    OPENAI_API_KEY=sk-xxx
-    TAVILY_API_KEY=tvly-xxx
+    ```OPENAI_API_KEY=sk-xxx
+    TAVILY_API_KEY=tvly-xxx```
 
 
 ### 3. Place Your PDFs
