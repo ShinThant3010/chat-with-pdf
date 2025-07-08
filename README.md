@@ -21,14 +21,14 @@ It supports session-based memory, ambiguous question clarification, and is fully
 
 ### 1. Clone the Repository
 
-    git clone https://github.com/yourusername/chat-with-pdf.git
+    git clone https://github.com/ShinThant3010/chat-with-pdf.git
     cd chat-with-pdf
 
 ### 2. Add Your API Keys
 
 Copy `.env.example` to `.env` and fill in your keys:
-OPENAI_API_KEY=sk-xxx
-TAVILY_API_KEY=tvly-xxx
+    OPENAI_API_KEY=sk-xxx
+    TAVILY_API_KEY=tvly-xxx
 
 
 ### 3. Place Your PDFs
