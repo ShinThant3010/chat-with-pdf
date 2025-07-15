@@ -8,10 +8,10 @@ It supports session-based memory, ambiguous question clarification, and is fully
 
 ## Features
 
-- **PDF-based RAG QA**: Answers user questions using OpenAI grounded in ingested PDFs.
-- **Web Search Fallback**: If the answer is not in the PDFs, performs real-time web search (Tavily).
-- **Clarifier Agent**: Detects ambiguous questions and prompts the user for clarification.
-- **Session Memory**: Remembers each user’s chat history for follow-up questions in the same session.
+- **PDF-based RAG QA**: Answer user questions using OpenAI grounded in ingested PDFs.
+- **Web Search Fallback**: If the answer is not in the PDFs, perform real-time web search (Tavily).
+- **Clarifier Agent**: Detect ambiguous questions and prompts the user for clarification.
+- **Session Memory**: Remember each user’s chat history for follow-up questions in the same session.
 - **Modular Agents**: Clean separation for clarification, PDF RAG, and web search agents.
 - **Dockerized**: Easy to run anywhere, with or without Docker Compose.
 
@@ -27,13 +27,15 @@ It supports session-based memory, ambiguous question clarification, and is fully
 ### 2. Add Your API Keys
 
 Copy `.env.example` to `.env` and fill in your keys:
-    OPENAI_API_KEY=sk-xxx
-    TAVILY_API_KEY=tvly-xxx
+```
+OPENAI_API_KEY=sk-xxx
+TAVILY_API_KEY=tvly-xxx
+```
 
 
 ### 3. Place Your PDFs
 
-Put your PDF files in the `sample_papers/` directory.
+Put your PDF files in the `papers/` directory.
 
 ### 4. Run the App
 
@@ -49,13 +51,6 @@ Put your PDF files in the `sample_papers/` directory.
 ### 5. Test the API
 
 - Open http://localhost:8000/docs for the Swagger UI.
-- Or use `curl`:
-
-    curl -X POST "http://localhost:8000/ask" \
-      -H "Content-Type: application/json" \
-      -d '{"session_id": "myuser", "question": "Summarize the experimental setup described in Lee et al. (2023)."}'
-
----
 
 ## API Endpoints
 
@@ -65,14 +60,14 @@ Put your PDF files in the `sample_papers/` directory.
     ```json
     {
       "answer": "text",
-      "agent": "pdf" | "web" | "clarifier",
-      "session_id": "user1",
-      "history": [ ... ]
+      "agent": "pdf",
+      "session_id": "session_id",
+      "history": [{ "question": "...", "answer": "..." }]
     }
     ```
 - **POST `/clear`**
-  - Input: `{ "session_id": "user1" }`
-  - Output: `{ "message": "Session user1 memory cleared." }`
+  - Input: `{ "session_id": "session_id" }`
+  - Output: `{ "message": "Session memory cleared." }`
 
 ---
 
@@ -108,14 +103,14 @@ Put your PDF files in the `sample_papers/` directory.
     │ ├── main.py 
     │ ├── agents.py 
     │ ├── pdf_ingest.py 
-    │ └── ... (other modules) 
-    ├── sample_papers/                 # Put your PDFs here 
+    ├── papers/                 # Put your PDFs here 
     ├── Dockerfile 
     ├── docker-compose.yml 
     ├── requirements.txt 
     ├── README.md 
     ├── .env                           # Your API keys (not committed) 
     ├── .env.example 
+    ├── .gitignore
     ├── golden_qa.json                 # Evaluation gold questions 
     ├── evaluate.py                    # Automated evaluation script 
     ``` </code> </pre>
@@ -141,7 +136,7 @@ Put your PDF files in the `sample_papers/` directory.
 
 - In-memory session storage is **not persistent**; restart clears memory.
 - Ensure you have enough OpenAI/Tavily quota for large experiments.
-- To add more PDFs, just drop them into `sample_papers/` and restart the app.
+- To add more PDFs, just drop them into `papers/` and restart the app.
 
 ---
 
