@@ -1,6 +1,9 @@
 # app/main.py
+
+import uuid
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import Optional
 from app.pdf_ingest import PDFIngestor
 from app.agents import router_agent, router_agent_with_history
 
@@ -17,7 +20,7 @@ pdf_ingestor.ingest()
 session_store = {}
 
 class QuestionRequest(BaseModel):
-    session_id: str
+    session_id: Optional[str] = None
     question: str
 
 class ClearMemoryRequest(BaseModel):
@@ -25,7 +28,7 @@ class ClearMemoryRequest(BaseModel):
 
 @app.post("/ask")
 def ask_question(req: QuestionRequest):
-    session_id = req.session_id
+    session_id = req.session_id if req.session_id else str(uuid.uuid4())
     # Load previous chat history
     history = session_store.get(session_id, [])
     
