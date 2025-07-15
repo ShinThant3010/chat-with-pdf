@@ -9,4 +9,5 @@ llama-index-embeddings-openai
 llama-index-vector-stores-faiss
 openai
 llama-index-llms-openai
+langchain-core
 langchain
